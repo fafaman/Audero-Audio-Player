@@ -80,14 +80,20 @@ var Application = {
       });
    },
    updateMediaList: function() {
+       appFile = new AppFile('podcast1', 'http://media.radiofrance-podcast.net/podcast09/10906-19.12.2014-ITEMA_20702827-1.mp3');
+       appFile.addFile();
+       appFile = new AppFile('podcast2', 'http://media.radiofrance-podcast.net/podcast09/10616-19.12.2014-ITEMA_20702830-0.mp3');
+       appFile.addFile();
+       $(document).trigger('endupdate');
+       return false;
       window.requestFileSystem(
          LocalFileSystem.PERSISTENT,
          0,
          function(fileSystem){
             var root = fileSystem.root;
             AppFile.deleteFiles();
-            //Application.collectMedia(root.fullPath, true);
-            Application.collectMedia('/storage/sdcard0/download/Assimil', true);
+            console.log('Starting to browse at: ' + root.fullPath);
+            Application.collectMedia(root.fullPath, true);
          },
          function(error){
             console.log('File System Error: ' + error.code);
