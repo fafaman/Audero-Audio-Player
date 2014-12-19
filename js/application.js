@@ -86,7 +86,8 @@ var Application = {
          function(fileSystem){
             var root = fileSystem.root;
             AppFile.deleteFiles();
-            Application.collectMedia(root.fullPath, true);
+            //Application.collectMedia(root.fullPath, true);
+            Application.collectMedia('/storage/sdcard0/download/Assimil', true);
          },
          function(error){
             console.log('File System Error: ' + error.code);
