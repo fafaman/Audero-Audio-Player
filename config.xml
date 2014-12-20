@@ -11,7 +11,9 @@
    <author href="http://www.audero.it" email="aurelioderosa@gmail.com">Aurelio De Rosa</author>
 
    <feature name="http://api.phonegap.com/1.0/network"/>
-   <feature name="http://api.phonegap.com/1.0/media"/>
+   <feature name="Media">
+     <param name="id" value="org.apache.cordova.media" />
+   </feature>
    <feature name="http://api.phonegap.com/1.0/file"/>
    <feature name="http://api.phonegap.com/1.0/notification"/>
 
